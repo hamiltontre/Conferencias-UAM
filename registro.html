@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro a Conferencias UAM</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo-uam.png" alt="Logo UAM">
+            <h1>Registro a Conferencias UAM</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="registro.html" class="active">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="registro">
+            <h2>Formulario de Registro</h2>
+            <form id="registroForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error-message" id="nombre-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo institucional (@uam.edu.ni):</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="carrera">Carrera:</label>
+                    <select id="carrera" name="carrera" required>
+                        <option value="">Seleccione su carrera</option>
+                        <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>
+                        <option value="Ingeniería en Computación">Ingeniería en Computación</option>
+                        <option value="Arquitectura">Arquitectura</option>
+                        <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                        <option value="Otra">Otra</option>
+                    </select>
+                    <span class="error-message" id="carrera-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Conferencias a las que desea asistir:</legend>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="conf1" name="conferencias" value="GitHub">
+                            <label for="conf1">Uso de GitHub en proyectos colaborativos (25/04 - 9:00 AM)</label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="conf2" name="conferencias" value="Docker">
+                            <label for="conf2">Introducción a Docker para entornos de desarrollo (26/04 - 2:00 PM)</label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="conf3" name="conferencias" value="Linux">
+                            <label for="conf3">Configuración básica de servidores Linux (27/04 - 10:00 AM)</label>
+                        </div>
+                    </fieldset>
+                    <span class="error-message" id="conferencias-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn">Enviar Registro</button>
+                </div>
+            </form>
+            
+            <div id="confirmacion" class="hidden">
+                <h3>¡Registro exitoso!</h3>
+                <p>Gracias por registrarte a nuestras conferencias tecnológicas. Hemos enviado un correo de confirmación a <span id="email-confirmacion"></span>.</p>
+                <p>Te esperamos en los eventos seleccionados:</p>
+                <ul id="eventos-confirmacion"></ul>
+                <a href="index.html" class="btn">Volver al inicio</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Universidad Americana (UAM) - Facultad de Ingeniería y Arquitectura</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
